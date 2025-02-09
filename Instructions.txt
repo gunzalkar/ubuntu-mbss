@@ -1,0 +1,17 @@
+Steps to run the config-review-ubuntu.sh for NST Cyber Configuration Review
+
+1. Copy the ubuntu-config-review-script.zip file to the server
+2. Extract the zip file 
+3. open the directory ubuntu-config-review-script
+4. run the script with the command,
+	sudo bash config-review-ubuntu-20-04.sh
+5. Enter the name of the operator when prompted,
+	Please Enter the Name of the Person Executing the Script:
+	<Enter Name>
+4. When the following is asked,
+	If this server is a designated log host please enter 1, enter 0 otherwise:
+   Please enter 1 if the server is a loghost, 0 otherwise.	
+6. Once the following message appears
+	Ubuntu 20.04 NST Cyber Configuration Review - Completed
+   The review result will be saved in the folder "results"
+	e.g. "results/Config_Review_Ubuntu_20-04_LTS_hostname_Fri_Nov_11_18-29-43_UTC_2022.csv"
