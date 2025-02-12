@@ -21,11 +21,6 @@ var_osnver=$(grep 'PRETTY_NAME=' /etc/os-release | cut -d= -f2 | sed -e 's/"//g'
 var_sysid=$(cat /proc/sys/kernel/hostname)
 
 
-# Script run by: <Capture as input from the person running the script>
-echo "Please Enter the Name of the Person Executing the Script:" 
-read var_scr_personnel
-
-
 # Date and time: <Capture from system>
 var_date1=$(date)
 
@@ -41,7 +36,6 @@ varfilename="results/"$varfile1".csv"
 echo "NST Cyber Configuration Review v0.1 Beta" >> $varfilename
 echo "OS and version: "$var_osnver >> $varfilename
 echo "System identity:" "$var_sysid" >> $varfilename
-echo "Script run by: "$var_scr_personnel >> $varfilename
 echo "Date and time: "$var_date1 >> $varfilename
 echo "Serial No#,Control Objective,Compliance Status,Additional Comments" >> $varfilename
 
@@ -747,7 +741,7 @@ fi
 
 # 51,Ensure remote rsyslog messages are only accepted on designated log hosts
 
-$var_51_log=0
+$var_51_log=0sudo 
 
 varout1=$(grep '$ModLoad imtcp' /etc/rsyslog.conf /etc/rsyslog.d/*.conf)
 varout2=$(grep '$InputTCPServerRun' /etc/rsyslog.conf /etc/rsyslog.d/*.conf)
