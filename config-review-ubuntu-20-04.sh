@@ -14,14 +14,13 @@ fi
 
 
 # OS and version: <Capture from system>
-var_osnver=$(grep 'PRETTY_NAME=' /etc/os-release | cut -d= -f2 | sed -e 's/"//g')
 
 
 
 # Date and time: <Capture from system>
 var_date1=$(date)
 
-varfile1="Config_Review_$var_osnver"_"$var_date1"
+varfile1="Config_Review_"$var_date1"
 # echo "$varfile1"
 varfile1=${varfile1// /_}
 varfile1=${varfile1//:/-}
