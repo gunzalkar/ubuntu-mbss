@@ -1,8 +1,3 @@
-#!/usr/bin/bash
-
-# Ubuntu 20.04 NST Cyber Configuration Review v0.2 Beta
-# Released on: 27 October 2022
-# Updated on: 17 November 2022
 
 rm -rf results
 rm -rf tempfiles 
@@ -16,7 +11,7 @@ then
     exit
 fi
 
-echo "Ubuntu 20.04 NST Cyber Configuration Review v0.1 Beta"
+
 
 # OS and version: <Capture from system>
 var_osnver=$(grep 'PRETTY_NAME=' /etc/os-release | cut -d= -f2 | sed -e 's/"//g')
@@ -43,7 +38,7 @@ varfile1=${varfile1//./-}
 varfilename="results/"$varfile1".csv"
 # echo "$varfilename"
 
-echo "Ubuntu 20.04 NST Cyber Configuration Review v0.1 Beta" >> $varfilename
+echo "NST Cyber Configuration Review v0.1 Beta" >> $varfilename
 echo "OS and version: "$var_osnver >> $varfilename
 echo "System identity:" "$var_sysid" >> $varfilename
 echo "Script run by: "$var_scr_personnel >> $varfilename
@@ -751,8 +746,9 @@ else
 fi
 
 # 51,Ensure remote rsyslog messages are only accepted on designated log hosts
-echo "If this server is a designated log host please enter 1, enter 0 otherwise:" 
-read var_51_log
+
+$var_51_log=0
+
 varout1=$(grep '$ModLoad imtcp' /etc/rsyslog.conf /etc/rsyslog.d/*.conf)
 varout2=$(grep '$InputTCPServerRun' /etc/rsyslog.conf /etc/rsyslog.d/*.conf)
 
