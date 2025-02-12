@@ -16,7 +16,6 @@ fi
 # OS and version: <Capture from system>
 
 
-
 # Date and time: <Capture from system>
 var_date1=$(date)
 
@@ -30,8 +29,6 @@ varfilename="results/"$varfile1".csv"
 # echo "$varfilename"
 
 echo "NST Cyber Configuration Review v0.1 Beta" >> $varfilename
-echo "OS and version: "$var_osnver >> $varfilename
-echo "System identity:" "$var_sysid" >> $varfilename
 echo "Date and time: "$var_date1 >> $varfilename
 echo "Serial No#,Control Objective,Compliance Status,Additional Comments" >> $varfilename
 
