@@ -12,16 +12,10 @@ then
 fi
 
 
-
-# OS and version: <Capture from system>
-
-
-
-
 # Date and time: <Capture from system>
 var_date1=$(date)
 
-varfile1="Config_Review_"$var_date1"
+varfile1="Config_Review_$var_date1"
 # echo "$varfile1"
 varfile1=${varfile1// /_}
 varfile1=${varfile1//:/-}
@@ -446,10 +440,10 @@ aslr31_1=$(grep -Es "^\s*kernel\.randomize_va_space\s*=\s*([0-1]|[3-9]|[1-9][0-9
 if [ -z "$aslr31_1" ] &&  [ "$aslr31" == "kernel.randomize_va_space=2" ]
 then
       # echo $aslr31
-      echo "31,Ensure address space layout randomization ASLR is enabled,Compliant" >> $varfilename
+      echo "31,Ensure address space layout randomization (ASLR) is enabled,Compliant" >> $varfilename
 else
       # echo $aslr31
-      echo "31,Ensure address space layout randomization ASLR is enabled,Non-Compliant" >> $varfilename
+      echo "31,Ensure address space layout randomization (ASLR) is enabled,Non-Compliant" >> $varfilename
 fi
 
 # 32,Ensure prelink is not installed
